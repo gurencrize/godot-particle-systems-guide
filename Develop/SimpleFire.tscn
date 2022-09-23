@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Flame.png" type="Texture" id=1]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0, 0.2, 0.812903, 1 )
+colors = PoolColorArray( 0.930176, 0.079937, 0.079937, 0, 0.92627, 0.149917, 0.0723648, 1, 0.996582, 0.71064, 0.0428219, 1, 0.980957, 0.678734, 0.0459824, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+gradient = SubResource( 2 )
+width = 100
+
+[sub_resource type="ParticlesMaterial" id=4]
+lifetime_randomness = 0.3
+flag_disable_z = true
+direction = Vector3( 0, -1, 0 )
+spread = 30.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 250.0
+initial_velocity_random = 0.4
+angular_velocity = 100.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+angle = 720.0
+angle_random = 1.0
+scale = 0.5
+scale_random = 0.4
+color_ramp = SubResource( 3 )
+
+[node name="Particle2D" type="Particles2D"]
+material = SubResource( 1 )
+amount = 16
+speed_scale = 1.2
+explosiveness = 0.1
+local_coords = false
+process_material = SubResource( 4 )
+texture = ExtResource( 1 )
